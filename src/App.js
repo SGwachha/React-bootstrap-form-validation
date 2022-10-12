@@ -23,7 +23,7 @@ function App() {
           <Form.Label>Email</Form.Label>
           <InputGroup hasValidation>
           <InputGroup.Text id="inputGroup">@</InputGroup.Text>
-          <Form.Control type="email" placeholder="Email Address" />
+          <Form.Control type="email" placeholder="Email Address" required/>
           <Form.Control.Feedback type="invalid">Please enter valid email</Form.Control.Feedback>
         </InputGroup>
         </Form.Group>
@@ -31,30 +31,31 @@ function App() {
         <Form.Group as={Col} controlId="formGridPassword">
           <Form.Label>Password</Form.Label>
           <InputGroup hasValidation>
-          <Form.Control type="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
+          <Form.Control type="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required/>
           <Form.Control.Feedback type="invalid">Please enter valid Password</Form.Control.Feedback></InputGroup>
         </Form.Group>
       </Row>
       <Row>
       <Form.Group className="mb-3" controlId="formGridFirstName">
         <Form.Label>First Name</Form.Label>
-        <Form.Control placeholder="First Name" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
-        <Form.Control.Feedback type="invalid">Please enter valid name</Form.Control.Feedback>
+        <Form.Control placeholder="First Name" required/>
+        <Form.Control.Feedback type="invalid" >Please enter valid first name</Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formGridLastName">
         <Form.Label>Last Name</Form.Label>
-        <Form.Control placeholder="Last Name" />
+        <Form.Control placeholder="Last Name" required/>
+        <Form.Control.Feedback>Please enter valid last name</Form.Control.Feedback>
       </Form.Group>
       </Row>
       <Form.Group className="mb-3" controlId="formGridAddress">
         <Form.Label>Address</Form.Label>
-        <Form.Control placeholder="Address" />
-        <Form.Control.Feedback type="invalid">Please enter valid address</Form.Control.Feedback>
+        <Form.Control placeholder="Address" required/>
+        <Form.Control.Feedback type="invalid" >Please enter valid address</Form.Control.Feedback>
       </Form.Group>
       <Row>
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>City</Form.Label>
-          <Form.Control placeholder="City" />
+          <Form.Control placeholder="City" required/>
         <Form.Control.Feedback type="invalid">Please enter valid city</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} controlId="formGridState">
@@ -67,8 +68,8 @@ function App() {
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label pattern="/(^\d{5}$)|(^\d{5}-\d{4}$)/">Zip</Form.Label>
-          <Form.Control />
+          <Form.Label pattern="/(^\d{5}$)|(^\d{5}-\d{4}$)/" required>Zip</Form.Label>
+          <Form.Control placeholder="Postal Zip" type="number" required />
         <Form.Control.Feedback type="invalid">Please enter valid zip</Form.Control.Feedback>
         </Form.Group>
       </Row>
