@@ -5,6 +5,7 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
+  //function for validation
   const [validation, setValidation] = useState(false)
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -16,6 +17,7 @@ function App() {
   };
 
   return (
+    // form design
     <>
     <Form noValidate validated={validation} onSubmit={handleSubmit}>
       <Row className="mb-3">
@@ -27,7 +29,6 @@ function App() {
           <Form.Control.Feedback type="invalid">Please enter valid email</Form.Control.Feedback>
         </InputGroup>
         </Form.Group>
-{/* didnt change anything */}
         <Form.Group as={Col} controlId="formGridPassword">
           <Form.Label>Password</Form.Label>
           <InputGroup hasValidation>
